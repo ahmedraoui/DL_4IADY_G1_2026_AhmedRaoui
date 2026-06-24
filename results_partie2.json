@@ -1,0 +1,109 @@
+{
+  "dataset": "Digits (sklearn), redimensionne 8x8 -> 32x32",
+  "n_samples": 1797,
+  "split_sizes": {
+    "train": 1078,
+    "val": 359,
+    "test": 360
+  },
+  "manual_size_calculations": [
+    {
+      "in_size": 32,
+      "kernel": 5,
+      "padding": 0,
+      "stride": 1,
+      "desc": "Conv 5x5, sans padding, stride 1 (image 32x32, ex. LeNet C1)",
+      "out_size": 28
+    },
+    {
+      "in_size": 32,
+      "kernel": 5,
+      "padding": 2,
+      "stride": 1,
+      "desc": "Conv 5x5, padding=2 (sortie preservee : 'same')",
+      "out_size": 32
+    },
+    {
+      "in_size": 28,
+      "kernel": 3,
+      "padding": 1,
+      "stride": 2,
+      "desc": "Conv 3x3, padding=1, stride=2 (sous-echantillonnage)",
+      "out_size": 14
+    },
+    {
+      "in_size": 28,
+      "kernel": 2,
+      "padding": 0,
+      "stride": 2,
+      "desc": "Pooling 2x2, stride=2 (division par 2 de la resolution)",
+      "out_size": 14
+    }
+  ],
+  "manual_vs_pytorch_match": {
+    "cross_correlation": true,
+    "max_pooling": true,
+    "avg_pooling": true
+  },
+  "cnn_reference": {
+    "test_acc": 0.9555555555555556,
+    "n_params": 61706,
+    "train_time_s": 3.89
+  },
+  "mlp_baseline": {
+    "test_acc": 0.9694444444444444,
+    "n_params": 279498,
+    "train_time_s": 1.15
+  },
+  "ablation_study": [
+    {
+      "name": "reference (k=5,p=0,s=1,max,f=6/16)",
+      "test_acc": 0.9527777777777777,
+      "n_params": 61706,
+      "train_time_s": 3.06,
+      "final_val_acc": 0.9721448421478271
+    },
+    {
+      "name": "avec padding=2 (same)",
+      "test_acc": 0.9777777777777777,
+      "n_params": 136586,
+      "train_time_s": 4.63,
+      "final_val_acc": 0.9916434288024902
+    },
+    {
+      "name": "stride=2 (sous-echantillonnage agressif)",
+      "test_acc": 0.9305555555555556,
+      "n_params": 15626,
+      "train_time_s": 1.13,
+      "final_val_acc": 0.9303621053695679
+    },
+    {
+      "name": "average-pooling au lieu de max-pooling",
+      "test_acc": 0.9416666666666667,
+      "n_params": 61706,
+      "train_time_s": 2.72,
+      "final_val_acc": 0.9721448421478271
+    },
+    {
+      "name": "plus de filtres (f=16/32)",
+      "test_acc": 0.9944444444444445,
+      "n_params": 120382,
+      "train_time_s": 5.72,
+      "final_val_acc": 0.9832869172096252
+    },
+    {
+      "name": "moins de filtres (f=4/8)",
+      "test_acc": 0.9694444444444444,
+      "n_params": 36046,
+      "train_time_s": 2.28,
+      "final_val_acc": 0.9749303460121155
+    },
+    {
+      "name": "avec convolution 1x1 additionnelle",
+      "test_acc": 0.9666666666666667,
+      "n_params": 61978,
+      "train_time_s": 3.15,
+      "final_val_acc": 0.9777158498764038
+    }
+  ]
+}

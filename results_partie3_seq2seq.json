@@ -1,0 +1,67 @@
+{
+  "corpus_source": "Helsinki-NLP/opus-100 (en-fr)",
+  "corpus_size": 26793,
+  "src_vocab_size": 3982,
+  "tgt_vocab_size": 4384,
+  "max_len": 5,
+  "split_sizes": {
+    "train": 21434,
+    "val": 2679,
+    "test": 2680
+  },
+  "train_time_s": 1736.92,
+  "final_val_loss": 5.654048442840576,
+  "final_val_perplexity": 285.44473647336014,
+  "bleu_greedy": 0.047190975236918946,
+  "bleu_beam_k3": 0.049758246811530765,
+  "example_translations": [
+    {
+      "en": "all right all right",
+      "reference_fr": "ça va ça va",
+      "greedy": "ça va",
+      "beam": "c est bon"
+    },
+    {
+      "en": "well think about it",
+      "reference_fr": "eh bien réfléchis y",
+      "greedy": "<unk> le",
+      "beam": "<unk> le"
+    },
+    {
+      "en": "that s highly unorthodox",
+      "reference_fr": "c est pas réglementaire",
+      "greedy": "les les les enfants",
+      "beam": "les les les enfants"
+    },
+    {
+      "en": "of the",
+      "reference_fr": "de la",
+      "greedy": "mettre en",
+      "beam": "mettre en"
+    },
+    {
+      "en": "you need to sleep",
+      "reference_fr": "vous devez dormir",
+      "greedy": "tu te faire foutre",
+      "beam": "tu te faire foutre"
+    },
+    {
+      "en": "my health",
+      "reference_fr": "raison de santé",
+      "greedy": "ma santé",
+      "beam": "ma santé"
+    },
+    {
+      "en": "what have we got",
+      "reference_fr": "c est quoi",
+      "greedy": "c est quoi café",
+      "beam": "c est quoi café"
+    },
+    {
+      "en": "he s getting away",
+      "reference_fr": "il s échappe",
+      "greedy": "il se <unk>",
+      "beam": "il se <unk>"
+    }
+  ]
+}

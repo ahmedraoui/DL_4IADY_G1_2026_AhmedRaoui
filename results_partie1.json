@@ -1,0 +1,52 @@
+{
+  "dataset": "Breast Cancer Wisconsin (sklearn)",
+  "n_samples": 569,
+  "n_features": 30,
+  "split_sizes": {
+    "train": 341,
+    "val": 114,
+    "test": 114
+  },
+  "total_trainable_params": 4097,
+  "state_dict_keys": [
+    "fc1.weight",
+    "fc1.bias",
+    "fc2.weight",
+    "fc2.bias",
+    "fc3.weight",
+    "fc3.bias"
+  ],
+  "init_strategies_comparison": {
+    "gaussienne": {
+      "best_val_loss": 0.050503212958574295,
+      "final_val_acc": 0.9736841917037964
+    },
+    "constante": {
+      "best_val_loss": 0.658134937286377,
+      "final_val_acc": 0.6315789222717285
+    },
+    "xavier": {
+      "best_val_loss": 0.032017361372709274,
+      "final_val_acc": 0.9736841917037964
+    }
+  },
+  "best_overall_model": "MLPCustom",
+  "best_val_loss_sequential": 0.032964009791612625,
+  "best_val_loss_custom": 0.032017361372709274,
+  "test_metrics": {
+    "accuracy": 0.9824561403508771,
+    "precision": 0.9859154929577465,
+    "recall": 0.9859154929577465,
+    "f1_score": 0.9859154929577465,
+    "confusion_matrix": [
+      [
+        42,
+        1
+      ],
+      [
+        1,
+        70
+      ]
+    ]
+  }
+}
